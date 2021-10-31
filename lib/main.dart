@@ -20,6 +20,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Advicer',
       theme: AppTheme.lightTheme,
       darkTheme: AppTheme.darkTheme,
