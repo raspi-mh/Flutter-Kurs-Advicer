@@ -3,6 +3,7 @@ import 'package:advicer/domain/failures/failures.dart';
 import 'package:advicer/domain/usecases/advicer_usecases.dart';
 import 'package:bloc/bloc.dart';
 import 'package:dartz/dartz.dart';
+import 'package:equatable/equatable.dart';
 import 'package:meta/meta.dart';
 
 part 'advicer_event.dart';
@@ -10,9 +11,9 @@ part 'advicer_state.dart';
 
 class AdvicerBloc extends Bloc<AdvicerEvent, AdvicerState> {
 
-  final usecases = AdvicerUsecases();
+  final AdvicerUsecases  usecases;
 
-  AdvicerBloc() : super(AdvicerInitial()) {
+  AdvicerBloc({required this.usecases}) : super(AdvicerInitial()) {
     on<AdvicerRequestedEvent>((event, emit) async {
       emit(AdvicerStateLoading());
       // do something
