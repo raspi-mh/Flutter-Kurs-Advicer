@@ -9,9 +9,11 @@ import 'package:meta/meta.dart';
 part 'advicer_event.dart';
 part 'advicer_state.dart';
 
-class AdvicerBloc extends Bloc<AdvicerEvent, AdvicerState> {
+const GENERAL_FAILURE_MESSAGE = "Ups, something gone wrong. Please try again!";
+const SERVER_FAILURE_MESSAGE = "Ups, API Error. Please try again!";
 
-  final AdvicerUsecases  usecases;
+class AdvicerBloc extends Bloc<AdvicerEvent, AdvicerState> {
+  final AdvicerUsecases usecases;
 
   AdvicerBloc({required this.usecases}) : super(AdvicerInitial()) {
     on<AdvicerRequestedEvent>((event, emit) async {
@@ -31,12 +33,12 @@ class AdvicerBloc extends Bloc<AdvicerEvent, AdvicerState> {
   String _mapFailureToMessage(Failure failure) {
     switch (failure.runtimeType) {
       case ServerFailure:
-        return "Ups, API Error, please try again!";
+        return SERVER_FAILURE_MESSAGE;
       case GeneralFailure:
-        return "Ups, something gone wrong. Please try again";
+        return GENERAL_FAILURE_MESSAGE;
 
       default:
-        return "Ups, something gone wrong. Try again";
+        return GENERAL_FAILURE_MESSAGE;
     }
   }
 }
