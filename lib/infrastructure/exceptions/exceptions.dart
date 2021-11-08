@@ -1,5 +1,4 @@
+class ServerException implements Exception {}
 
+class CacheExeption implements Exception {}
 
-class ServerException implements Exception{
-  
-}

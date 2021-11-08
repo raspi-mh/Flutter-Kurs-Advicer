@@ -1,5 +1,7 @@
+import 'package:advicer/infrastructure/datasources/theme_local_datasource.dart';
 import 'package:get_it/get_it.dart';
 import 'package:http/http.dart' as http;
+import 'package:shared_preferences/shared_preferences.dart';
 import 'application/bloc/advicer_bloc.dart';
 import 'domain/repositories/advicer_repository.dart';
 import 'domain/usecases/advicer_usecases.dart';
@@ -22,7 +24,11 @@ Future<void> init() async {
   //! datasources
   sl.registerLazySingleton<AdvicerRemoteDatasource>(
       () => AdvicerRemoteDatasourceImpl(client: sl()));
+  sl.resetLazySingleton<ThemeLocalDatasource>(
+      instance: () => ThemeLocalDatasourceImpl(sharedPreferences: sl()));
 
   //! extern
   sl.registerLazySingleton(() => http.Client());
+  final sharedPreferences = await SharedPreferences.getInstance();
+  sl.registerLazySingleton(() => sharedPreferences);
 }
