@@ -1,4 +1,6 @@
+import 'package:advicer/domain/repositories/theme_repository.dart';
 import 'package:advicer/infrastructure/datasources/theme_local_datasource.dart';
+import 'package:advicer/infrastructure/repositories/theme_repository_impl.dart';
 import 'package:get_it/get_it.dart';
 import 'package:http/http.dart' as http;
 import 'package:shared_preferences/shared_preferences.dart';
@@ -20,6 +22,8 @@ Future<void> init() async {
   //! repos
   sl.registerLazySingleton<AdvicerRepository>(
       () => AdvicerRepositoryImpl(advicerRemoteDatasource: sl()));
+  sl.registerLazySingleton<ThemeRepository>(
+      () => ThemeRepositoryImpl(themeLocalDatasource: sl()));
 
   //! datasources
   sl.registerLazySingleton<AdvicerRemoteDatasource>(
