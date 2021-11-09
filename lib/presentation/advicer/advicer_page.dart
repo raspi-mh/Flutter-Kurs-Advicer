@@ -1,5 +1,5 @@
 //import 'package:advicer/application/advicer/advicer_bloc.dart';
-import 'package:advicer/application/bloc/advicer_bloc.dart';
+import 'package:advicer/application/advicer/advicer_bloc.dart';
 import 'package:advicer/presentation/advicer/widgets/advice_field.dart';
 import 'package:advicer/presentation/advicer/widgets/custom_button.dart';
 import 'package:advicer/presentation/advicer/widgets/error_message.dart';

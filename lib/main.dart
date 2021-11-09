@@ -3,7 +3,7 @@ import 'package:advicer/presentation/advicer/advicer_page.dart';
 import 'package:advicer/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'application/bloc/advicer_bloc.dart';
+import 'application/advicer/advicer_bloc.dart';
 import 'injection.dart' as di;
 import 'injection.dart';
 

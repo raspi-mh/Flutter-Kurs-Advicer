@@ -1,4 +1,4 @@
-import 'package:advicer/application/bloc/advicer_bloc.dart';
+import 'package:advicer/application/advicer/advicer_bloc.dart';
 import 'package:advicer/domain/entities/advice_entity.dart';
 import 'package:advicer/domain/failures/failures.dart';
 import 'package:advicer/domain/usecases/advicer_usecases.dart';

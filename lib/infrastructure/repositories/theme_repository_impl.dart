@@ -9,7 +9,7 @@ class ThemeRepositoryImpl implements ThemeRepository {
   ThemeRepositoryImpl({required this.themeLocalDatasource});
 
   @override
-  Future<Either<Failure, bool>> getThemoMode() async {
+  Future<Either<Failure, bool>> getThemeMode() async {
     try {
       final themeMode = await themeLocalDatasource.getCachedThemeData();
       return Right(themeMode);

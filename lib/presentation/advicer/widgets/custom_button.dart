@@ -1,5 +1,5 @@
 //import 'package:advicer/application/advicer/advicer_bloc.dart';
-import 'package:advicer/application/bloc/advicer_bloc.dart';
+import 'package:advicer/application/advicer/advicer_bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 

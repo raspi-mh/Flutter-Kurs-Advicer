@@ -29,7 +29,7 @@ void main() {
       when(mockThemeLocalDatasource.getCachedThemeData())
           .thenAnswer((_) async => t_themeMode);
       // act
-      final result = await themeRepository.getThemoMode();
+      final result = await themeRepository.getThemeMode();
       // assert
       expect(result, Right(t_themeMode));
       verify(mockThemeLocalDatasource.getCachedThemeData());
@@ -41,7 +41,7 @@ void main() {
       when(mockThemeLocalDatasource.getCachedThemeData())
           .thenThrow(CacheExeption());
       // act
-      final result = await themeRepository.getThemoMode();
+      final result = await themeRepository.getThemeMode();
       // assert
       expect(result, Left(CacheFailure()));
       verify(mockThemeLocalDatasource.getCachedThemeData());
