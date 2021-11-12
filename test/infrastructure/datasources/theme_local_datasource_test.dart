@@ -50,7 +50,7 @@ void main() {
   });
 
   group("cachThemeData", () {
-    final t_themeData = true;
+    const t_themeData = true;
 
     test("should call shared preferences to cache theme mode", () {
 
